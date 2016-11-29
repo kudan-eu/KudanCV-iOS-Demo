@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		642390881DEDE6BB00E218F7 /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = 642390871DEDE6BB00E218F7 /* key.txt */; };
+		BC6A6EE01DDB14720004B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EDF1DDB14720004B970 /* main.m */; };
+		BC6A6EE31DDB14720004B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EE21DDB14720004B970 /* AppDelegate.m */; };
+		BC6A6EE91DDB14720004B970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6A6EE71DDB14720004B970 /* Main.storyboard */; };
+		BC6A6EEB1DDB14720004B970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6A6EEA1DDB14720004B970 /* Assets.xcassets */; };
+		BC6A6EEE1DDB14720004B970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6A6EEC1DDB14720004B970 /* LaunchScreen.storyboard */; };
+		BC6A6EF61DDB15670004B970 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EF51DDB15670004B970 /* ViewController.mm */; };
+		BC6A6EFB1DDB15850004B970 /* CameraAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EF81DDB15850004B970 /* CameraAccess.m */; };
+		BC6A6EFC1DDB15850004B970 /* Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EFA1DDB15850004B970 /* Drawing.m */; };
+		BC6A6F0A1DDB19FC0004B970 /* lego.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC6A6F091DDB19FC0004B970 /* lego.jpg */; };
+		BC6A6F101DDB39090004B970 /* libKudanCV-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6A6F0F1DDB39090004B970 /* libKudanCV-iOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		642390871DEDE6BB00E218F7 /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
+		BC6A6EDB1DDB14720004B970 /* KudanCV Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KudanCV Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6A6EDF1DDB14720004B970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC6A6EE11DDB14720004B970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC6A6EE21DDB14720004B970 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC6A6EE41DDB14720004B970 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BC6A6EE81DDB14720004B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC6A6EEA1DDB14720004B970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC6A6EED1DDB14720004B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC6A6EEF1DDB14720004B970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6A6EF51DDB15670004B970 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		BC6A6EF71DDB15850004B970 /* CameraAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraAccess.h; sourceTree = "<group>"; };
+		BC6A6EF81DDB15850004B970 /* CameraAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraAccess.m; sourceTree = "<group>"; };
+		BC6A6EF91DDB15850004B970 /* Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
+		BC6A6EFA1DDB15850004B970 /* Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
+		BC6A6F061DDB17110004B970 /* Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interface.h; path = KudanCV/Interface.h; sourceTree = "<group>"; };
+		BC6A6F091DDB19FC0004B970 /* lego.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego.jpg; sourceTree = "<group>"; };
+		BC6A6F0F1DDB39090004B970 /* libKudanCV-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libKudanCV-iOS.a"; path = "KudanCV/libKudanCV-iOS.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC6A6ED81DDB14720004B970 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6A6F101DDB39090004B970 /* libKudanCV-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC6A6ED21DDB14720004B970 = {
+			isa = PBXGroup;
+			children = (
+				BC6A6EDD1DDB14720004B970 /* KudanCV-Demo-iOS */,
+				BC6A6EDC1DDB14720004B970 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC6A6EDC1DDB14720004B970 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC6A6EDB1DDB14720004B970 /* KudanCV Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC6A6EDD1DDB14720004B970 /* KudanCV-Demo-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				642390871DEDE6BB00E218F7 /* key.txt */,
+				BC6A6F031DDB16D20004B970 /* KudanCV */,
+				BC6A6EFE1DDB15BE0004B970 /* Assets */,
+				BC6A6EFD1DDB15990004B970 /* Auxilary */,
+				BC6A6EE11DDB14720004B970 /* AppDelegate.h */,
+				BC6A6EE21DDB14720004B970 /* AppDelegate.m */,
+				BC6A6EE41DDB14720004B970 /* ViewController.h */,
+				BC6A6EF51DDB15670004B970 /* ViewController.mm */,
+				BC6A6EE71DDB14720004B970 /* Main.storyboard */,
+				BC6A6EEA1DDB14720004B970 /* Assets.xcassets */,
+				BC6A6EEC1DDB14720004B970 /* LaunchScreen.storyboard */,
+				BC6A6EEF1DDB14720004B970 /* Info.plist */,
+				BC6A6EDE1DDB14720004B970 /* Supporting Files */,
+			);
+			path = "KudanCV-Demo-iOS";
+			sourceTree = "<group>";
+		};
+		BC6A6EDE1DDB14720004B970 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC6A6EDF1DDB14720004B970 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC6A6EFD1DDB15990004B970 /* Auxilary */ = {
+			isa = PBXGroup;
+			children = (
+				BC6A6EF71DDB15850004B970 /* CameraAccess.h */,
+				BC6A6EF81DDB15850004B970 /* CameraAccess.m */,
+				BC6A6EF91DDB15850004B970 /* Drawing.h */,
+				BC6A6EFA1DDB15850004B970 /* Drawing.m */,
+			);
+			name = Auxilary;
+			sourceTree = "<group>";
+		};
+		BC6A6EFE1DDB15BE0004B970 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BC6A6F091DDB19FC0004B970 /* lego.jpg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		BC6A6F031DDB16D20004B970 /* KudanCV */ = {
+			isa = PBXGroup;
+			children = (
+				BC6A6F061DDB17110004B970 /* Interface.h */,
+				BC6A6F0F1DDB39090004B970 /* libKudanCV-iOS.a */,
+			);
+			name = KudanCV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC6A6EDA1DDB14720004B970 /* KudanCV Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6A6EF21DDB14720004B970 /* Build configuration list for PBXNativeTarget "KudanCV Demo" */;
+			buildPhases = (
+				BC6A6ED71DDB14720004B970 /* Sources */,
+				BC6A6ED81DDB14720004B970 /* Frameworks */,
+				BC6A6ED91DDB14720004B970 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KudanCV Demo";
+			productName = "KudanCV-Demo-iOS";
+			productReference = BC6A6EDB1DDB14720004B970 /* KudanCV Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC6A6ED31DDB14720004B970 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				TargetAttributes = {
+					BC6A6EDA1DDB14720004B970 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = PMJQMQJ895;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = BC6A6ED61DDB14720004B970 /* Build configuration list for PBXProject "KudanCV-Demo-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC6A6ED21DDB14720004B970;
+			productRefGroup = BC6A6EDC1DDB14720004B970 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC6A6EDA1DDB14720004B970 /* KudanCV Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC6A6ED91DDB14720004B970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6A6EEE1DDB14720004B970 /* LaunchScreen.storyboard in Resources */,
+				642390881DEDE6BB00E218F7 /* key.txt in Resources */,
+				BC6A6EEB1DDB14720004B970 /* Assets.xcassets in Resources */,
+				BC6A6F0A1DDB19FC0004B970 /* lego.jpg in Resources */,
+				BC6A6EE91DDB14720004B970 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC6A6ED71DDB14720004B970 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6A6EFB1DDB15850004B970 /* CameraAccess.m in Sources */,
+				BC6A6EFC1DDB15850004B970 /* Drawing.m in Sources */,
+				BC6A6EE31DDB14720004B970 /* AppDelegate.m in Sources */,
+				BC6A6EE01DDB14720004B970 /* main.m in Sources */,
+				BC6A6EF61DDB15670004B970 /* ViewController.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BC6A6EE71DDB14720004B970 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6A6EE81DDB14720004B970 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC6A6EEC1DDB14720004B970 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6A6EED1DDB14720004B970 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC6A6EF01DDB14720004B970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BC6A6EF11DDB14720004B970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC6A6EF31DDB14720004B970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				INFOPLIST_FILE = "KudanCV-Demo-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KudanCV-Demo-iOS",
+					"$(PROJECT_DIR)/KudanCV-Demo-iOS/KudanCV",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.kudan.ar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BC6A6EF41DDB14720004B970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "KudanCV-Demo-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KudanCV-Demo-iOS",
+					"$(PROJECT_DIR)/KudanCV-Demo-iOS/KudanCV",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.kudan.ar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC6A6ED61DDB14720004B970 /* Build configuration list for PBXProject "KudanCV-Demo-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6A6EF01DDB14720004B970 /* Debug */,
+				BC6A6EF11DDB14720004B970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6A6EF21DDB14720004B970 /* Build configuration list for PBXNativeTarget "KudanCV Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6A6EF31DDB14720004B970 /* Debug */,
+				BC6A6EF41DDB14720004B970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC6A6ED31DDB14720004B970 /* Project object */;
+}
