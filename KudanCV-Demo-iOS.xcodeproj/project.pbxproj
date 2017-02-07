@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		642390881DEDE6BB00E218F7 /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = 642390871DEDE6BB00E218F7 /* key.txt */; };
+		64F17BFB1E4A3F8D0041414E /* GyroManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64F17BFA1E4A3F8D0041414E /* GyroManager.mm */; };
+		64F17BFE1E4A3FCA0041414E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F17BFD1E4A3FCA0041414E /* CoreMotion.framework */; };
 		BC6A6EE01DDB14720004B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EDF1DDB14720004B970 /* main.m */; };
 		BC6A6EE31DDB14720004B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A6EE21DDB14720004B970 /* AppDelegate.m */; };
 		BC6A6EE91DDB14720004B970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6A6EE71DDB14720004B970 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		642390871DEDE6BB00E218F7 /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
+		64F17BF91E4A3F8D0041414E /* GyroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroManager.h; sourceTree = "<group>"; };
+		64F17BFA1E4A3F8D0041414E /* GyroManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GyroManager.mm; sourceTree = "<group>"; };
 		BC6A6EDB1DDB14720004B970 /* KudanCV Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KudanCV Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6A6EDF1DDB14720004B970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC6A6EE11DDB14720004B970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				BC6A6EF81DDB15850004B970 /* CameraAccess.m */,
 				BC6A6EF91DDB15850004B970 /* Drawing.h */,
 				BC6A6EFA1DDB15850004B970 /* Drawing.m */,
+				64F17BF91E4A3F8D0041414E /* GyroManager.h */,
+				64F17BFA1E4A3F8D0041414E /* GyroManager.mm */,
 			);
 			name = Auxilary;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			files = (
 				BC6A6EFB1DDB15850004B970 /* CameraAccess.m in Sources */,
 				BC6A6EFC1DDB15850004B970 /* Drawing.m in Sources */,
+				64F17BFB1E4A3F8D0041414E /* GyroManager.mm in Sources */,
 				BC6A6EE31DDB14720004B970 /* AppDelegate.m in Sources */,
 				BC6A6EE01DDB14720004B970 /* main.m in Sources */,
 				BC6A6EF61DDB15670004B970 /* ViewController.mm in Sources */,
