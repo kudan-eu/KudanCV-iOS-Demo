@@ -118,7 +118,8 @@ unsigned char *imageDataFromUIImage(UIImage *image)
 
 
 /**
- This sets up this MarkerTracker class as a delegate of the CameraAccess class, so it will be informed when there is a new frame */
+ This sets up this MarkerTracker class as a delegate of the CameraAccess class, so it will be informed when there is a new frame 
+ */
 - (void)initialiseCamera
 {
     CameraAccess *cam = [CameraAccess getInstance];
@@ -128,7 +129,6 @@ unsigned char *imageDataFromUIImage(UIImage *image)
     
     [cam start];
 }
-
 
 /**
  This sets up a GyroManager to access the iOS gyro/IMU
@@ -145,7 +145,6 @@ unsigned char *imageDataFromUIImage(UIImage *image)
 {
     trackerState = Uninitialised;
     nextState = Uninitialised;
-
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -158,10 +157,10 @@ unsigned char *imageDataFromUIImage(UIImage *image)
     [self initialiseArbitrack];
     
     trackerRectangle = [Quadrilateral new];
-    [trackerRectangle initialise:self.cameraImageView];
+    [trackerRectangle initialise:self.view];
     
     arbitrackGrid = [Grid new];
-    [arbitrackGrid initialise:self.cameraImageView];
+    [arbitrackGrid initialise:self.view];
     
     
     self.trackerLabel.hidden = true;
@@ -268,7 +267,7 @@ unsigned char *imageDataFromUIImage(UIImage *image)
                 
                 
                 // Pass the four projected corners of the trackable to the Quadrilateral object for drawing
-                [trackerRectangle draw:self.cameraImageView p0:trackedCorner0 p1:trackedCorner1 p2:trackedCorner2 p3:trackedCorner3 colour:[UIColor blueColor]];
+                [trackerRectangle draw:self.view p0:trackedCorner0 p1:trackedCorner1 p2:trackedCorner2 p3:trackedCorner3 colour:[UIColor blueColor]];
             }
             else {
                 
@@ -285,7 +284,7 @@ unsigned char *imageDataFromUIImage(UIImage *image)
                 self.arbitrackLabel.textColor = [UIColor whiteColor];
                 
                 
-                [arbitrackGrid draw:self.cameraImageView p0:arbitrackCorner0 p1:arbitrackCorner1 p2:arbitrackCorner2 p3:arbitrackCorner3 colour:[UIColor greenColor]];
+                [arbitrackGrid draw:self.view p0:arbitrackCorner0 p1:arbitrackCorner1 p2:arbitrackCorner2 p3:arbitrackCorner3 colour:[UIColor greenColor]];
             }
             else {
                 self.arbitrackLabel.hidden = true;
@@ -322,6 +321,11 @@ std::string loadBundledKey(std::string file)
 {
     NSString *keyFileNS = [NSString stringWithUTF8String:file.c_str()];
     NSString *keyFilePathNS = [[NSBundle mainBundle] pathForResource:keyFileNS ofType:nil];
+    
+    if (keyFilePathNS == nil) {
+        NSLog(@"ERROR: Could not read key file \n");
+        return "";
+    }
     std::string keyFilePath([keyFilePathNS UTF8String]);
     
     std::string key = loadKey(keyFilePath);
@@ -378,7 +382,7 @@ std::string loadBundledKey(std::string file)
     parameters.guessIntrinsics();
     
     // Important: set the intrinsic parameters on the tracker
-    arbiTracker->setCameraParameters(parameters, 10, 1000);
+    arbiTracker->setCameraParameters(parameters);
 
     
     
@@ -431,9 +435,8 @@ std::string loadBundledKey(std::string file)
 }
 
 /** Project a 3D point to 2D image given the camera pose (R, T) and calibration (K)
- This reflects the x-coordinate so that the screen coordinates align with what is used inside the tracker
  */
-KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 position, KudanQuaternion orientation, float w)
+KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 position, KudanQuaternion orientation)
 {
     
     // to project a 3D point X (3x1) according to a camera with rotation R (3x3) and translation T (3x1), and the camera intrinsic matrkx K (3x3), xh = K[R|T]X = K*(RX + T), where xh is the homogeneous point
@@ -442,15 +445,14 @@ KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 
     //KudanMatrix3 rotationMatrix = KudanQuaternion::quaternionToRotation(orientation);
     KudanMatrix3 rotationMatrix(orientation);
     
-    KudanVector3 RX = rotationMatrix.multiply(X);
-    KudanVector3 RXplusT = RX.add(position); // this is the point X expressed in the camera's coordinate frame
+    KudanVector3 RX = rotationMatrix * X;
+    KudanVector3 RXplusT = RX + position; // this is the point X expressed in the camera's coordinate frame
     
     // Project using the intrinsicmatrix:
-    KudanVector3 XH = intrinsicMatrix.multiply(RXplusT);
+    KudanVector3 XH = intrinsicMatrix * RXplusT;
     
     // Divide the homogeneous coordinates through by the z coordinate
-    // Note: also need to reflect in the horizontal direction, because of the reference frame in which the pose is given!
-    KudanVector2 pt(w - XH.x / XH.z , XH.y / XH.z);
+    KudanVector2 pt(XH.x / XH.z , XH.y / XH.z);
     
     return pt;
 }
@@ -513,7 +515,7 @@ KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 
             // Project the point (0,0,0) using the camera intrinsics and extrinsics. Also need to pass in the image with (see function)
             KudanVector3 position = tracked->getPosition();
             KudanQuaternion orientation = tracked->getOrientation();
-            KudanVector2 projection = project(origin, K, position, orientation, width);
+            KudanVector2 projection = project(origin, K, position, orientation);
 
             
 
@@ -530,16 +532,16 @@ KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 
             
             
             KudanVector3 corner00(-w/2.f, -h/2.f, 0);
-            KudanVector2 projection00 = project(corner00, K, position, orientation, width);
+            KudanVector2 projection00 = project(corner00, K, position, orientation);
             
             KudanVector3 corner01(-w/2.f, h/2.f, 0);
-            KudanVector2 projection01 = project(corner01, K, position, orientation, width);
+            KudanVector2 projection01 = project(corner01, K, position, orientation);
             
             KudanVector3 corner11(w/2.f, h/2.f, 0);
-            KudanVector2 projection11 = project(corner11, K, position, orientation, width);
+            KudanVector2 projection11 = project(corner11, K, position, orientation);
             
             KudanVector3 corner10(w/2.f, -h/2.f, 0);
-            KudanVector2 projection10 = project(corner10, K, position, orientation, width);
+            KudanVector2 projection10 = project(corner10, K, position, orientation);
             
             
             // Save as four separate points as properties on the MarkerTracker:
@@ -607,22 +609,22 @@ KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 
                 
                 KudanVector3 origin(0,0,0);
                 
-                KudanVector2 projection = project(origin, K, position, orientation, width);
+                KudanVector2 projection = project(origin, K, position, orientation);
                 
                 arbitrackCentre = CGPointMake(projection.x, projection.y);
                 
                 // Get the four outer grid corners by projecting  +/- the arbitrack scale in (x,y)
                 KudanVector3 corner00(-arbitrackScale, -arbitrackScale, 0);
-                KudanVector2 projection00 = project(corner00, K, position, orientation, width);
+                KudanVector2 projection00 = project(corner00, K, position, orientation);
                 
                 KudanVector3 corner01(-arbitrackScale, arbitrackScale, 0);
-                KudanVector2 projection01 = project(corner01, K, position, orientation, width);
+                KudanVector2 projection01 = project(corner01, K, position, orientation);
                 
                 KudanVector3 corner11(arbitrackScale, arbitrackScale, 0);
-                KudanVector2 projection11 = project(corner11, K, position, orientation, width);
+                KudanVector2 projection11 = project(corner11, K, position, orientation);
                 
                 KudanVector3 corner10(arbitrackScale, -arbitrackScale, 0);
-                KudanVector2 projection10 = project(corner10, K, position, orientation, width);
+                KudanVector2 projection10 = project(corner10, K, position, orientation);
                 
                 
                 // Save as four separate points as properties on the MarkerTracker:
