@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "Drawing.h"
+#import "GyroManager.h"
 #import <fstream>
 
 #import "KudanCV/KudanCV.h"
@@ -129,6 +130,15 @@ unsigned char *imageDataFromUIImage(UIImage *image)
 }
 
 
+/**
+ This sets up a GyroManager to access the iOS gyro/IMU
+ */
+- (void)initialiseGyro
+{
+    GyroManager *gyro = [GyroManager getInstance];
+    [gyro initialise];
+    
+}
 
 
 - (void)viewDidLoad
@@ -143,6 +153,7 @@ unsigned char *imageDataFromUIImage(UIImage *image)
     // initialise camera first to get the paramters (in principle)
 
     [self initialiseCamera];
+    [self initialiseGyro];
     [self initialiseTracker];
     [self initialiseArbitrack];
     
@@ -557,6 +568,20 @@ KudanVector2 project(KudanVector3 X, KudanMatrix3 intrinsicMatrix, KudanVector3 
             NSLog(@"Error: ArbiTracker is NULL! \n");
             return;
         }
+        
+        
+        // Important: before calling processFrame on Arbitrack, it is necessary to provide an orientation estimate from some other sensor, e.g. iOS IMU
+        // If this is not done, then Arbitrack will not output an orientation
+        
+        // For this demo, use a reasonably simple gyro manager class to get the values:
+        GyroManager *gyro = [GyroManager getInstance];
+
+        KudanQuaternion gyroQuaternion = [gyro getOrientation];
+        printf("Got gyro %s: norm = %f \n", gyroQuaternion.toString().c_str(), gyroQuaternion.norm());
+        
+        // Use this function to set the orientation:
+        arbiTracker->setSensedOrientation( gyroQuaternion );
+        
         
         
         arbitrackCentre = CGPointMake(0, 0);
