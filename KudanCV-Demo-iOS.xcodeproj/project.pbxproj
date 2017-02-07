@@ -26,6 +26,7 @@
 		642390871DEDE6BB00E218F7 /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
 		64F17BF91E4A3F8D0041414E /* GyroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroManager.h; sourceTree = "<group>"; };
 		64F17BFA1E4A3F8D0041414E /* GyroManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GyroManager.mm; sourceTree = "<group>"; };
+		64F17BFD1E4A3FCA0041414E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BC6A6EDB1DDB14720004B970 /* KudanCV Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KudanCV Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6A6EDF1DDB14720004B970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC6A6EE11DDB14720004B970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F17BFE1E4A3FCA0041414E /* CoreMotion.framework in Frameworks */,
 				BC6A6F101DDB39090004B970 /* libKudanCV-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,11 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64F17BFC1E4A3FC90041414E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64F17BFD1E4A3FCA0041414E /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC6A6ED21DDB14720004B970 = {
 			isa = PBXGroup;
 			children = (
 				BC6A6EDD1DDB14720004B970 /* KudanCV-Demo-iOS */,
 				BC6A6EDC1DDB14720004B970 /* Products */,
+				64F17BFC1E4A3FC90041414E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
