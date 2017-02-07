@@ -403,11 +403,11 @@ std::string loadBundledKey(std::string file)
         NSLog(@"Requested: Initialise Arbitrack from here \n");
         
         
-        KudanVector3 startPosition(0,0,200); // in front of the camera
+        KudanVector3 startPosition(0,0,100); // in front of the camera
         KudanQuaternion startOrientation(1,0,0,0); // without rotation
         arbiTracker->start(startPosition, startOrientation);
         
-        arbitrackScale = 100;
+        arbitrackScale = 20;
         
         // Always set the state via the nextState variable to avoid thread synchronisation issues!
         // Otherwise the value could be re-set to something else before this is used (if already processing the frame)
