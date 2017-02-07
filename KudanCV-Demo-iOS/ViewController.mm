@@ -1,7 +1,8 @@
 #import "ViewController.h"
 #import "Drawing.h"
-#import "Interface.h"
 #import <fstream>
+
+#import "KudanCV/KudanCV.h"
 
 enum TrackerState {
     Uninitialised,

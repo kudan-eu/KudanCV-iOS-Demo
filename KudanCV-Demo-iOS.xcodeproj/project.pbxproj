@@ -41,7 +41,7 @@
 		BC6A6EF81DDB15850004B970 /* CameraAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraAccess.m; sourceTree = "<group>"; };
 		BC6A6EF91DDB15850004B970 /* Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
 		BC6A6EFA1DDB15850004B970 /* Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
-		BC6A6F061DDB17110004B970 /* Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interface.h; path = KudanCV/Interface.h; sourceTree = "<group>"; };
+		BC6A6F061DDB17110004B970 /* KudanCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KudanCV.h; path = KudanCV/KudanCV.h; sourceTree = "<group>"; };
 		BC6A6F091DDB19FC0004B970 /* lego.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego.jpg; sourceTree = "<group>"; };
 		BC6A6F0F1DDB39090004B970 /* libKudanCV-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libKudanCV-iOS.a"; path = "KudanCV/libKudanCV-iOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		BC6A6F031DDB16D20004B970 /* KudanCV */ = {
 			isa = PBXGroup;
 			children = (
-				BC6A6F061DDB17110004B970 /* Interface.h */,
+				BC6A6F061DDB17110004B970 /* KudanCV.h */,
 				BC6A6F0F1DDB39090004B970 /* libKudanCV-iOS.a */,
 			);
 			name = KudanCV;
