@@ -2,7 +2,7 @@
 ___
 This repository contains an Xcode project with example code for an application that uses the KudanCV standalone library to perform image-based and markerless tracking of objects viewed by the camera.
 
-The sample code has been written to be run on an **iPad**.
+The sample code has been written to be run best on an **iPad** it will also work on **iPhone**.
 
 Pull requests that optimise the sample drawing of the tracked areas for iPhone, are welcome.
 
